@@ -194,18 +194,34 @@ bench get-app --branch version-14 erpnext
 bench --site erp.testSite.com install-app erpnext
 ```
 
-#### Schritt 7: Starten Sie ERPNext und schließen Sie die Installation ab
+#### Schritt 7: Setzen Sie die aktuelle Site
+
+Navigieren Sie zu Ihrem `sites` Verzeichnis und erstellen Sie eine `currentsite.txt` Datei. Schreiben Sie den Namen Ihrer Website in diese Datei und ändern Sie die Berechtigungen, sodass das `bench` Kommando darauf zugreifen kann.
+
+```bash
+cd /opt/bench/erpnext/sites
+echo "erp.testSite.com" > currentsite.txt
+sudo chown $USER: currentsite.txt
+```
+
+Ersetzen Sie `erp.testSite.com` mit dem Namen Ihrer Website.
+
+#### Schritt 8: Starten Sie ERPNext und schließen Sie die Installation ab
 
 ```bash
 bench use erp.testSite.com
 bench start
 ```
 
-Navigieren Sie zur IP-Adresse Ihrer Installation und der Portnummer, die nach dem Ausführen auf dem Terminal angezeigt wird. Verwenden Sie im Fall einer lokalen Instanz 127.0.0.1:8000
+Navigieren Sie zur IP-Adresse Ihrer Installation und der Portnummer, die nach dem Ausführen auf dem Terminal angezeigt wird. Verwenden Sie im Fall einer lokalen Instanz 127.0.0.1:8000.
 
-Um vom Dev-Mode zu Production-Mode zu wechseln, führen Sie folgende Befehl aus:
+#### Schritt 9: Wechseln Sie vom Entwicklungsmodus in den Produktionsmodus
+
+Führen Sie den folgenden Befehl aus, um den Modus zu wechseln:
 
 ```bash
 sudo bench setup production $USER
 sudo supervisorctl restart all
 ```
+
+Diese Schritte sollten jetzt alle notwendigen Schritte abdecken, um eine ERPNext-App auf Ihrer Website zu installieren und zu starten, sowie die Site für das `bench` Kommando zu setzen und vom Entwicklungsmodus in den Produktionsmodus zu wechseln.
