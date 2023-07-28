@@ -165,6 +165,14 @@ Der nächste Schritt besteht darin, das Bench-Verzeichnis mit installiertem Frap
 bench init --frappe-branch version-14 erpnext
 ```
 
+Ignoriere die Warnung:
+
+```bash
+ WARN  Cannot connect to redis_cache to update assets_json
+ WARN  Cannot connect to redis_cache to update assets_json
+ WARN  Cannot connect to redis_cache to update assets_json
+```
+
 Erstellen Sie eine neue Frappe-Site.
 
 ```bash
@@ -174,10 +182,10 @@ bench new-site erp.testSite.com
 
 #### Schritt 5: Holen Sie sich die ERPNext-Anwendung von GitHub
 
-Laden Sie die ERPNext aus dem Frappe-Github-Repo herunter. Wir werden Version 13 verwenden. Sie können jede Version verwenden, die Sie möchten.
+Laden Sie die ERPNext aus dem Frappe-Github-Repo herunter. Wir werden Version 14 verwenden. Sie können jede Version verwenden, die Sie möchten.
 
 ```bash
-bench get-app --branch version-13 erpnext
+bench get-app --branch version-14 erpnext
 ```
 
 #### Schritt 6: Installieren Sie die ERPNext-App auf unserer Website
