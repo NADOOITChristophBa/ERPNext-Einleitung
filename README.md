@@ -45,7 +45,7 @@ sudo reboot
 #### Schritt 1: Installieren Sie Python Tools & wkhtmltopdf
 
 ```bash
-sudo apt -y install vim libffi-dev python3-pip python3-dev python3-testresources libssl-dev wkhtmltopdf
+sudo apt -y install vim libffi-dev python3-pip python3-dev python3-testresources libssl-dev wkhtmltopdf python3.10-venv
 ```
 
 #### Schritt 2: Installieren Sie Curl, Redis und Node.js
@@ -147,7 +147,6 @@ sudo chown -R erpnext /opt/bench
 Wechseln Sie als Nächstes zum erpnext-Benutzer und installieren Sie die Anwendung:
 
 ```bash
-sudo su - erpnext
 cd /opt/bench
 ```
 
@@ -163,7 +162,7 @@ sudo pip3 install frappe-bench
 Der nächste Schritt besteht darin, das Bench-Verzeichnis mit installiertem Frappe-Framework zu initialisieren. Stellen Sie sicher, dass Sie sich noch im Verzeichnis /opt/bench befinden:
 
 ```bash
-bench init --frappe-branch version-13 erpnext
+bench init --frappe-branch version-14 erpnext
 ```
 
 Erstellen Sie eine neue Frappe-Site.
